@@ -1,0 +1,28 @@
+<div *ngIf="games.length" class="Leaderboard">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th class="left">User</th>
+        <th># of turns</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of games; let i = index">
+        <td>{{i + 1}}</td>
+        <td class="left">{{game.user.email}}</td>
+        <td>{{game.turn}}</td>
+        <td>{{game.created | date:'short'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!games.length && !isLoading" class="Leaderboard Leaderboard__noGames">
+  <div>No games have been played yet</div>
+</div>
+
+<div *ngIf="!games.length && isLoading" class="Leaderboard Leaderboard__loading">
+  <div>Fetching leaderboard.</div>
+</div>
