@@ -1,9 +1,9 @@
-<div *ngIf="user" class="UserProfile">
-  <img [src]="user.photo" [alt]="user.email" [title]="user.email" width="40" />
+<!-- <div class="UserProfile">
+  <img width="40" />
   <ul>
-    <li (click)="onLogout()">Log Out</li>
+    <li>Log Out</li>
   </ul>
-</div>
+</div> -->
 
-<button *ngIf="!user" (click)="onLogin()" class="loginButton">Log In</button>
+<button class="loginButton">Log In</button>
 

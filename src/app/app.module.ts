@@ -21,52 +21,15 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { appRoutes, AuthenticatedUserCanActivate } from './app.routes';
+import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
-import { CipherSelectorComponent } from './game-view/cipher-selector/cipher-selector.component';
-import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
-import { entityRepositoryReducer } from './entity-repository/entity-repository.reducer';
-import { EntityRepositoryService } from './entity-repository/entity-repository.service';
-import { gameViewReducer } from './game-view/game-view.reducer';
-import { GameViewEffects } from './game-view/game-view.effects';
-import { GameViewComponent } from './game-view/game-view.component';
-import { GameViewContainerComponent } from './game-view/game-view.container';
-import { leaderboardReducer } from './leaderboard/leaderboard.reducer';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { LeaderboardContainerComponent } from './leaderboard/leaderboard.container';
-import { LeaderboardEffects } from './leaderboard/leaderboard.effects';
-import { LeaderboardResolver } from './leaderboard/leaderboard.resolver';
-import { LoadingSpinnerComponent } from './game-view/loading-spinner/loading-spinner.component';
 import { MainMenuComponent } from './main-menu/main-menu.component';
-import { onlineUsersReducer } from './online-users/online-users.reducer';
-import { OnlineUsersComponent } from './online-users/online-users.component';
-import { OnlineUsersContainerComponent } from './online-users/online-users.container';
-import { OnlineUsersEffects } from './online-users/online-users.effects';
-import { RatingComponent } from './game-view/rating/rating.component';
-import { SelectedCipherComponent } from './game-view/selected-cipher/selected-cipher.component';
-import { userProfileReducer } from './user-profile/user-profile.reducer';
-import { UserProfileComponent } from './user-profile/user-profile.component';
-import { UserProfileContainerComponent } from './user-profile/user-profile.container';
-import { UserProfileEffects } from './user-profile/user-profile.effects';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CipherSelectorComponent,
-    ConfirmationModalComponent,
-    GameViewComponent,
-    GameViewContainerComponent,
-    LeaderboardComponent,
-    LeaderboardContainerComponent,
-    LoadingSpinnerComponent,
-    MainMenuComponent,
-    OnlineUsersComponent,
-    OnlineUsersContainerComponent,
-    RatingComponent,
-    SelectedCipherComponent,
-    UserProfileComponent,
-    UserProfileContainerComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -74,28 +37,13 @@ import { UserProfileEffects } from './user-profile/user-profile.effects';
     HttpModule,
     RouterModule.forRoot(appRoutes),
 
-    StoreModule.forRoot({
-      userProfile: userProfileReducer,
-      entityRepository: entityRepositoryReducer,
-      leaderboard: leaderboardReducer,
-      game: gameViewReducer,
-      onlineUsers: onlineUsersReducer
-    }),
+    StoreModule.forRoot({}),
 
-    EffectsModule.forRoot([
-      UserProfileEffects,
-      LeaderboardEffects,
-      GameViewEffects,
-      OnlineUsersEffects,
-    ]),
+    EffectsModule.forRoot([]),
 
     StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
-  providers: [
-    AuthenticatedUserCanActivate,
-    EntityRepositoryService,
-    LeaderboardResolver
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

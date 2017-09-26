@@ -1,8 +1,8 @@
-<div *ngIf="isUserLoggedIn" class="OnlineUsers">
-  <h2>Players online: {{users.length}}</h2>
+<div class="OnlineUsers">
+  <h2>Players online: 0</h2>
   <ul>
-    <li *ngFor="let user of users" [title]="user.email">
-      <img [src]="user.photo" [alt]="user.email" width="40" />
+    <li>
+      <img width="40" />
     </li>
   </ul>
 </div>

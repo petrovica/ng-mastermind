@@ -1,4 +1,5 @@
-<div *ngIf="games.length" class="Leaderboard">
+<!-- IF GAMES  -->
+<!-- <div class="Leaderboard">
   <table>
     <thead>
       <tr>
@@ -9,20 +10,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let game of games; let i = index">
-        <td>{{i + 1}}</td>
-        <td class="left">{{game.user.email}}</td>
-        <td>{{game.turn}}</td>
-        <td>{{game.created | date:'short'}}</td>
+      <tr>
+        <td>0</td>
+        <td class="left">email</td>
+        <td>turn</td>
+        <td>created</td>
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
-<div *ngIf="!games.length && !isLoading" class="Leaderboard Leaderboard__noGames">
+<!-- IF NO GAMES AND NOT LOADING -->
+<div class="Leaderboard Leaderboard__noGames">
   <div>No games have been played yet</div>
 </div>
 
-<div *ngIf="!games.length && isLoading" class="Leaderboard Leaderboard__loading">
+<!-- IF NO GAMES AND LOADING -->
+<!-- <div class="Leaderboard Leaderboard__loading">
   <div>Fetching leaderboard.</div>
-</div>
+</div> -->
