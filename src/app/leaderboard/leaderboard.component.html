@@ -1,5 +1,5 @@
 <!-- IF GAMES  -->
-<div *ngIf="bestGames?.length" class="Leaderboard">
+<div *ngIf="(bestGames$ | async)?.length" class="Leaderboard">
   <table>
     <thead>
       <tr>
@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let game of bestGames">
+      <tr *ngFor="let game of bestGames$ | async">
         <td>0</td>
         <td class="left">{{game.user.email}}</td>
         <td>{{game.turn}}</td>
