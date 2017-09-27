@@ -1,5 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -9,7 +10,5 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-
-  constructor() {}
 
 }

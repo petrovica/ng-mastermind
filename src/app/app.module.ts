@@ -23,13 +23,18 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { appRoutes } from './app.routes';
 import { AppComponent } from './app.component';
+import { LeaderboardEffects } from './leaderboard/leaderboard.effects';
+import { leaderboardReducer } from './leaderboard/leaderboard.reducer';
+import { LeaderboardResolver } from './leaderboard/leaderboard.resolver';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    LeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -37,13 +42,19 @@ import { MainMenuComponent } from './main-menu/main-menu.component';
     HttpModule,
     RouterModule.forRoot(appRoutes),
 
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      leaderboard: leaderboardReducer
+    }),
 
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([
+      LeaderboardEffects
+    ]),
 
     StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
-  providers: [],
+  providers: [
+    LeaderboardResolver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

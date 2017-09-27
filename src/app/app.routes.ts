@@ -1,3 +1,5 @@
+import { LeaderboardResolver } from './leaderboard/leaderboard.resolver';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { Injectable } from '@angular/core';
 import { Routes } from '@angular/router';
 
@@ -7,5 +9,9 @@ export const appRoutes: Routes = [
   {
     path: '',
     component: MainMenuComponent
+  },
+  {
+    path: 'leaderboard',
+    component: LeaderboardComponent
   }
 ];

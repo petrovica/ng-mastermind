@@ -1,1 +1,4 @@
-export interface AppState {}
+import { LeaderboardState } from './leaderboard/leaderboard.reducer';
+export interface AppState {
+  leaderboard: LeaderboardState;
+}

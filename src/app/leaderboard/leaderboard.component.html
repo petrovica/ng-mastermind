@@ -1,5 +1,5 @@
 <!-- IF GAMES  -->
-<!-- <div class="Leaderboard">
+<div *ngIf="bestGames?.length" class="Leaderboard">
   <table>
     <thead>
       <tr>
@@ -10,22 +10,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let game of bestGames">
         <td>0</td>
-        <td class="left">email</td>
-        <td>turn</td>
-        <td>created</td>
+        <td class="left">{{game.user.email}}</td>
+        <td>{{game.turn}}</td>
+        <td>{{game.created | date:'y-MM-dd'}}</td>
       </tr>
     </tbody>
   </table>
-</div> -->
-
-<!-- IF NO GAMES AND NOT LOADING -->
-<div class="Leaderboard Leaderboard__noGames">
-  <div>No games have been played yet</div>
 </div>
 
-<!-- IF NO GAMES AND LOADING -->
-<!-- <div class="Leaderboard Leaderboard__loading">
-  <div>Fetching leaderboard.</div>
-</div> -->
+
