@@ -1,0 +1,4 @@
+// isAiTurn
+// isResumeModalVisible
+// getActiveGame
+// getLastGuess
