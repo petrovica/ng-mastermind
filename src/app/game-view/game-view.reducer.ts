@@ -1,12 +1,9 @@
-// START_GAME - start game, if there's already game in progress, it should open dialog with 2 options - start new game / resume game
-// START_NEW_GAME
-// RESUME_GAME,
-// GAME_OVER - you loose
-// PLAYER_TURN - when user submits cipher
-// WAITING_FOR_AI - waiting for server
-// WAITING_FOR_PLAYER - player can play
+// START_GAME - start game (erase current game data), if there's already game in progress, open ConfirmationModal
+// START_NEW_GAME, START_LAST_GAME - hide ConfirmationModal dialog
+// WAITING_FOR_AI - waiting for server (state.aiTurn = true)
+// WAITING_FOR_PLAYER - player can play (state.aiTurn = false))
 
 // What we need to store:
-//  - active game data,
-//  - if we're waiting for AI turn tu end
+//  - active game data (state.game)
+//  - if we're waiting for AI turn tu end (state.aiTurn)
 //  - if dialog with Start New Game / Resume Game options should be visible
